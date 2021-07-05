@@ -21,7 +21,7 @@ background: rgb(0,0,0,0.8);
 backdrop-filter: blur(2px);
 .active{
    font-size: 20px;
-   color: #73007d !important;
+   color: #4B0082 !important;
    font-weight: 600 !important;
 }
 a{
@@ -48,7 +48,7 @@ a{
 }
 .sidebar_open{
    @media screen and (max-width: 420px) {
-         width: 100vw;
+         width: 100%;
    }
    width: 300px;
    height: 100vh;
@@ -184,7 +184,6 @@ background: rgb(5,5,5);
    >section{
       >section{
          >section{
-            min-width: 150px !important;
             min-height: 200px !important;
             p{
                max-width: 150px !important;
@@ -213,17 +212,115 @@ background: rgb(5,5,5);
       >section{
          >section{
             >section{
-               min-width: 100px !important;
                min-height: 150px !important;
-               p{
-                  max-width: 100px;
-               }
             }
          }
       }
    }
 }
 @media screen and (max-width: 420px) {
+   .slider{
+         overflow-y: scroll;
+         overflow-x: hidden;
+         margin: 0 auto;
+         max-width: 200px;
+         max-height: 200px;
+         padding: 1em;
+         flex-direction: column !important;
+      >section{
+         justify-content: center;
+         align-items: stretch;
+         margin: 0 auto;
+      }
+   }
+}
+`
 
+export const MainAuth = styled.main
+`
+display: flex;
+align-items: center;
+justify-content: center;
+min-width: 100%;
+min-height: 100vh;
+>section{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   >section{
+      margin: 2.2rem auto;
+      display: flex;
+      flex-direction: column;
+      padding: .5rem;
+      max-width: 500px;
+      min-height: 500px;
+      background: rgb(5,5,5);
+      >section{
+         margin: 1em;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         >p{
+            font-size: 1.3rem;
+            max-width: 100px;
+            .active{
+               font-size: 2rem;
+            }
+         }
+      }
+      form{
+         justify-content: space-between;
+         min-height: calc(400px - 4em);
+         padding: 1em;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         section{
+            display: flex;
+            margin: 1em;
+            justify-content: flex-start;
+            flex-direction: column;
+         }
+         input{
+            background: rgb(40,40,40);
+            width: 240px;
+            padding: 10px;
+            margin: .5rem;
+            border: none;
+            outline: none;
+            ::placeholder {
+               text-align: center;
+            }
+            :hover{
+               background: rgb(50,50,50);
+            }
+         }
+         button{
+            border-radius: 5px;
+            margin: 1em;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: #4B0082;
+            padding: 5px 0;
+            min-width: 200px;
+            background: black;
+            :hover{
+               background: rgb(5,5,5);
+            }
+         }
+      }
+      .active{
+         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+         font-weight: 600;
+         color: #4B0082;
+      }
+      .deactive{
+         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+         font-weight: 300;
+         color: white;
+      }
+   }
 }
 `

@@ -37,6 +37,7 @@ function mouseMove(event:any){
    const walk = (x - startX)
    slider.scrollLeft = scrollLeft - walk
 }
+
 //lazy load
 
 useEffect(() => {
@@ -51,7 +52,7 @@ useEffect(() => {
    })
    const options:any = {
       rootMargin: '0px -10% 0px 0px',
-      threshold: 0.1
+      threshold: 0.9
    }
    function handleImg(myImg:any, observer:any){
       myImg.forEach((myImgSingle:any) => {
@@ -70,9 +71,9 @@ useEffect(() => {
 })
   const content = state.data.map((video:any, index:number) => { return <section key={index}>
      <picture>
-        <source media="(max-width: 1024px) and (min-width: 768px)" srcSet={video.show_picture_1024}/>
-        <source media="(max-width: 768px)" srcSet={video.show_picture_768}/>
-        <img data-src={video.show_picture_1980} src="" alt={video.show_name_eng} className="img"/>
+        <source media="(max-width: 1024px) and (min-width: 768px)" srcSet="" data-src={video.show_picture_1024}/>
+        <source media="(max-width: 768px)" srcSet="" data-src={video.show_picture_768}/>
+        <img data-src={video.show_picture_1980} srcSet="" alt={video.show_name_eng} className="img"/>
      </picture>
   <a href={video.show_name_eng}>
      <p>{video.show_name_ru}</p>
