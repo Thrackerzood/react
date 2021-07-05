@@ -14,6 +14,7 @@ export const Header = styled.header
 `
 top: 0;
 left: 0;
+z-index: 100;
 position: fixed;
 width: 100%;
 background: rgb(0,0,0,0.8);
@@ -96,6 +97,13 @@ a{
 `
 export const MainHome = styled.main
 `
+.load{
+   background: rgb(20,20,20);
+   img{
+      position: sticky;
+      z-index: -100;
+   }
+}
 .close{
    z-index: 0;
 }
@@ -108,6 +116,7 @@ background: rgb(5,5,5);
 >section{
    padding: 2vw 0;
    overflow: hidden;
+   width: 100%;
    >section{
       display: flex;
       overflow-x: scroll;
@@ -141,13 +150,27 @@ background: rgb(5,5,5);
    cursor: grabbing;
 }
 @media screen and (min-width: 1024px) {
+   .load{
+      width: 150px;
+      height: 250px;
+   }
    img{
       max-height: 250px;
    }
+   .slider{
+      min-height: 250px;
+   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+   .load{
+      width: 100px;
+      height: 200px;
+   }
    img{
       max-height: 150px;
+   }
+   .slider{
+      min-height: 200px;
    }
    .active{
       font-size: 16px;
@@ -156,7 +179,7 @@ background: rgb(5,5,5);
       font-size: 14px;
    }
    p{
-      max-width: 200px;
+      max-width: 200px !important;
    }
    >section{
       >section{
@@ -164,15 +187,22 @@ background: rgb(5,5,5);
             min-width: 150px !important;
             min-height: 200px !important;
             p{
-               max-width: 150px;
+               max-width: 150px !important;
             }
          }
       }
    }
 }
 @media screen and (max-width: 768px) {
+   .load{
+      width: 75px;
+      height: 100px;
+   }
       img{
          max-height: 100px;
+      }
+      .slider{
+         min-height: 150px;
       }
       .active{
          font-size: 14px;
@@ -192,5 +222,8 @@ background: rgb(5,5,5);
          }
       }
    }
+}
+@media screen and (max-width: 420px) {
+
 }
 `
